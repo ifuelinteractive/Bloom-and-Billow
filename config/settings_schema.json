@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Dawn",
+    "theme_name": "Bloom & Billow",
     "theme_version": "2.3.0",
-    "theme_author": "Shopify",
-    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes/os20/themes-by-shopify/dawn",
-    "theme_support_url": "https://support.shopify.com/"
+    "theme_author": "iFuel Interactive",
+    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes\/os20\/themes-by-shopify\/dawn",
+    "theme_support_url": "https:\/\/support.shopify.com\/"
   },
   {
     "name": "t:settings_schema.colors.name",
@@ -13,6 +13,12 @@
       {
         "type": "header",
         "content": "t:settings_schema.colors.settings.header__1.content"
+      },
+      {
+        "id": "bloom_and_billow_primary",
+        "type": "color",
+        "default": "#283B38",
+        "label": "Bloom & Billow Primary Color"
       },
       {
         "type": "color",
