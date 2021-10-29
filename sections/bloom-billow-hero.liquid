@@ -1,0 +1,478 @@
+<style>
+
+    .Bloom-And-Billow-Hero {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        /* min-height: 56rem; */
+
+        max-height: 70rem;
+        margin-bottom: 20rem;
+    }
+
+    .Bloom-And-Billow-Hero .hero__media {
+        /* height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%; */
+
+        display: block;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        z-index: 1;
+        text-align: right;
+
+        {%- if section.settings.background_color -%}
+        background-color: {{ section.settings.background_color }}
+        {%- endif -%}
+    }
+
+    .Bloom-And-Billow-Hero .hero__media img {
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+        min-height: 100%;
+    }
+
+    .Bloom-And-Billow-Hero .hero__media .accent-smoke {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 20%;
+        margin-top: 9%;
+        margin-right: 5%;
+        opacity: 0.5;
+
+        -webkit-animation: toke 40s linear infinite;
+        -moz-animation: toke 40s linear infinite;
+        animation: toke 40s linear infinite;
+    }
+
+    @-moz-keyframes toke { 
+        0% {
+            -moz-transform: rotate(0deg) scale(1);
+            opacity: 0.5;
+        }
+        50% {
+            -moz-transform: rotate(180deg) scale(1.25);
+            opacity: 0.7;
+        }
+        100% { 
+            -moz-transform: rotate(360deg) scale(1);
+            opacity: 0.5;
+        }
+    }
+    @-webkit-keyframes toke { 
+        0% {
+            -webkit-transform: rotate(0deg) scale(1);
+            opacity: 0.5;
+        }
+        50% {
+            -webkit-transform: rotate(180deg) scale(1.25);
+            opacity: 0.7;
+        }
+        100% { 
+            -webkit-transform: rotate(360deg) scale(1);
+            opacity: 0.5;
+        }
+    }
+    @keyframes toke { 
+        0% {
+            -webkit-transform:rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+            opacity: 0.5;
+        }
+        50% {
+            -webkit-transform: rotate(150deg) scale(1.25);
+            transform: rotate(180deg) scale(1.25);
+            opacity: 0.7;
+        }
+        100% { 
+            -webkit-transform:rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1);
+            opacity: 0.5;
+        }
+    }
+
+    .Bloom-And-Billow-Hero .hero__media .accent-smoke img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .Bloom-And-Billow-Hero .hero__content__container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+
+    .Bloom-And-Billow-Hero .hero__content__container .hero__content {
+        
+    }
+
+    .Bloom-And-Billow-Hero .hero__content__container .hero__content .hero__content-block {
+        width: 60%;
+        /* display: flex;
+        flex-direction: column; */
+    }
+
+    .Bloom-And-Billow-Hero .hero__content__container .hero__content .hero__content-block .hero__content-cta {
+        text-align: center;
+        margin: 1.5vw 0 2.5vw 0;
+    }
+
+    .Bloom-And-Billow-Hero .hero__content__container .hero__content .hero__content-block .hero__content-cta h1 {
+        margin: 0 0 1rem 0;
+        {%- if section.settings.heading_color -%}
+        color: {{ section.settings.heading_color }};
+        {%- endif -%}
+    }
+
+    .Bloom-And-Billow-Hero .hero__content__container .hero__content .hero__content-block .hero__content-cta h2 {
+        padding: 0 5%;
+        font-size: 1.5vw;
+        font-weight: 400;
+        margin: 0;
+        
+        {%- if section.settings.heading_color -%}
+        color: {{ section.settings.heading_color }};
+        {%- endif -%}
+    }
+
+    .Bloom-And-Billow-Hero .hero__content__container .hero__content .hero__content-block .hero__content-cards {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .Bloom-And-Billow-Hero .hero__content__container .hero__content .hero__content-block .hero__content-cards .hero__content-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        /* width: 45%;
+        height: 35.5vw; */
+        /* background-size: cover;
+        background-color: rgb(var(--color-bloom-and-billow-primary)); */
+        overflow: hidden;
+        border-radius: 20px;
+        -webkit-box-shadow: 3px 3px 13px 3px rgba(0,0,0,0.3); 
+        box-shadow: 3px 3px 13px 3px rgba(0,0,0,0.3);
+        text-align: center;
+        color: #fff;
+
+        width: 46%;
+        max-width: 400px;
+        height: 0;
+        padding-bottom: 63.5%;
+    }
+
+    .Bloom-And-Billow-Hero .hero__content__container .hero__content .hero__content-block .hero__content-cards .hero__content-card .card-background {
+        display: block;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all .8s;
+    }
+
+    .Bloom-And-Billow-Hero .hero__content__container .hero__content .hero__content-block .hero__content-cards .hero__content-card:hover .card-background {
+        transform: scale(1.05);
+    }
+
+    .Bloom-And-Billow-Hero .hero__content__container .hero__content .hero__content-block .hero__content-cards .hero__content-card h3 {
+        text-transform: uppercase;
+        color: #fff;
+        position: relative;
+        z-index: 4;
+
+        font-size: 1.35vw;
+        text-shadow: 3px 5px 4px rgba(0,0,0,0.16);
+    }
+
+    .Bloom-And-Billow-Hero .hero__content__container .hero__content .hero__content-block .hero__content-cards .hero__content-card .hero__content-card-text {
+        color: #fff;
+        position: relative;
+        z-index: 4;
+    }
+
+    .Bloom-And-Billow-Hero .hero__content__container .hero__content .hero__content-block .hero__content-cards .hero__content-card p {
+        margin: 0;
+        line-height: 1.25;
+        font-weight: bold;
+        font-size: 2vw;
+        text-shadow: 3px 5px 4px rgba(0,0,0,0.16);
+    }
+
+    .Bloom-And-Billow-Hero .hero__content__container .hero__content .hero__content-block .hero__content-cards .hero__content-card .button {
+        position: absolute;
+        bottom: 8%;
+        z-index: 4;
+
+        border-radius: 20px;
+        line-height: 1;
+        padding: 12px 30px 14px 30px;
+        min-height: 35px;
+        min-width: 170px;
+        -webkit-box-shadow: 4px 3px 4px 1px rgba(0,0,0,0.3); 
+        box-shadow: 4px 3px 4px 1px rgba(0,0,0,0.3);
+    }
+
+    @media screen and (min-width: 1200px) {
+        .Bloom-And-Billow-Hero .hero__content__container .hero__content .hero__content-block .hero__content-cards .hero__content-card p {
+            font-size: 38px;
+            font-size: 1.75vw;
+        }
+
+        .Bloom-And-Billow-Hero .hero__content__container .hero__content .hero__content-block .hero__content-cards .hero__content-card h3 {
+            font-size: 17px;
+        }
+
+        .Bloom-And-Billow-Hero .hero__content__container .hero__content .hero__content-block .hero__content-cards .hero__content-card .button {
+            font-size: 1.9rem;
+        }
+    }
+
+    @media screen and (min-width: 1400px) {
+        .Bloom-And-Billow-Hero .hero__content__container .hero__content .hero__content-block .hero__content-cards .hero__content-card p {
+            font-size: 38px;
+        }
+    }
+
+    @media screen and (min-width: 1600px) {
+
+        .Bloom-And-Billow-Hero .hero__content__container .hero__content .hero__content-block .hero__content-cta {
+            margin: 40px 0 65px 0;
+        }
+
+        .Bloom-And-Billow-Hero .hero__content__container .hero__content .hero__content-block .hero__content-cta h1 {
+
+        }
+
+        .Bloom-And-Billow-Hero .hero__content__container .hero__content .hero__content-block .hero__content-cta h2 {
+            font-size: 26px;
+        }
+    }
+
+    @media screen and (min-width: 1800px) {
+        .Bloom-And-Billow-Hero .hero__media {
+        }
+
+        .Bloom-And-Billow-Hero .hero__media img {
+            object-fit: contain;
+            width: auto;
+            height: 100%;
+        }
+
+        .Bloom-And-Billow-Hero .hero__media .accent-smoke {
+            width: 320px;
+        }
+    }
+
+</style>
+
+
+
+
+<div id="Bloom-And-Billow-Hero-{{ section.id }}" class="Bloom-And-Billow-Hero">
+    <div class="hero__media">
+        <img
+            srcset="{%- if section.settings.image.width >= 375 -%}{{ section.settings.image | img_url: '375x' }} 375w,{%- endif -%}
+            {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | img_url: '750x' }} 750w,{%- endif -%}
+            {%- if section.settings.image.width >= 1100 -%}{{ section.settings.image | img_url: '1100x' }} 1100w,{%- endif -%}
+            {%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | img_url: '1500x' }} 1500w,{%- endif -%}
+            {%- if section.settings.image.width >= 1780 -%}{{ section.settings.image | img_url: '1780x' }} 1780w,{%- endif -%}
+            {%- if section.settings.image.width >= 2000 -%}{{ section.settings.image | img_url: '2000x' }} 2000w,{%- endif -%}
+            {%- if section.settings.image.width >= 3000 -%}{{ section.settings.image | img_url: '3000x' }} 3000w,{%- endif -%}
+            {%- if section.settings.image.width >= 3840 -%}{{ section.settings.image | img_url: '3840x' }} 3840w,{%- endif -%}
+            {{ section.settings.image | img_url: 'master' }} {{ section.settings.image.width }}w"
+            sizes="100vw"
+            src="{{ section.settings.image | img_url: '1500x' }}"
+            loading="lazy"
+            alt="{{ section.settings.image.alt | escape }}"
+            width="{{ section.settings.image.width }}"
+            height="{{ section.settings.image.width | divided_by: section.settings.image.aspect_ratio }}"
+        >
+        {%- if section.settings.enable_accent -%}
+        <div class="accent-smoke"><img src="{{ 'puff.png' | asset_url }}" alt="" /></div>
+        {%- endif -%}
+    </div>
+
+    <div class="hero__content__container">
+        <div class="hero__content page-width">
+            <div class="hero__content-block">
+                <div class="hero__content-cta">
+                    {%- if section.settings.heading -%}
+                    <h1>{{ section.settings.heading }}</h1>
+                    {%- endif -%}
+                    {%- if section.settings.subheading -%}
+                    <h2>{{ section.settings.subheading }}</h2>
+                    {%- endif -%}
+                </div>
+                <div class="hero__content-cards">
+                    {%- for block in section.blocks -%}
+                    <div class="hero__content-card">
+                        {%- if block.settings.image -%}
+                        <div class="card-background" style="background-image: url({{ block.settings.image | img_url: '450x622' }});"></div>
+                        {%- endif -%}
+
+                        {%- if block.settings.subheading -%}
+                        <h3>{{ block.settings.subheading }}</h3>
+                        {%- endif -%}
+
+                        {%- if block.settings.heading -%}
+                        <div class="hero__content-card-text">{{ block.settings.heading }}</div>
+                        {%- endif -%}
+
+                        {%- if block.settings.button_color or block.settings.button_text_color -%}
+                        <style>
+                            #cta-button-{{block.id}} {
+                                {%- if block.settings.button_color -%}background-color: {{block.settings.button_color}};{%- endif -%}
+                                {%- if block.settings.button_text_color -%}color: {{block.settings.button_text_color}};{%- endif -%}
+                            }
+                            {%- if block.settings.button_hover_color -%}
+                            #cta-button-{{block.id}}:hover {
+                                background-color: {{block.settings.button_hover_color}} !important;
+                            }
+                            {%- endif -%}
+                        </style>
+                        {%- endif -%}
+                        {%- if block.settings.button_label and block.settings.button_link -%}
+                        <a href="{{block.settings.button_link}}" class="button" id="cta-button-{{block.id}}">{{ block.settings.button_label }}</a>
+                        {%- endif -%}
+                    </div>
+                    {%- endfor -%}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Bloom & Billow Hero",
+    "tag": "section",
+    "class": "spaced-section spaced-section--full-width",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Hero Background"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Hero Background Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_accent",
+        "default": true,
+        "label": "Enable Smoke Accent?",
+        "info": "Smoke animation on default hero image"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Initial Background Color",
+        "default": "#F2E8DC"
+      },
+      {
+        "type": "header",
+        "content": "Hero Headings"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "H1 Hero Heading"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "H2 Hero Subheading"
+      },
+      {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading Text Color",
+        "default": "#283B38"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "card",
+        "name": "Hero Promo Card",
+        "limit": 2,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "info": "Image size displayed at 450x622",
+            "label": "Background Image"
+          },
+          {
+            "type": "text",
+            "id": "subheading",
+            "label": "Subheading"
+          },
+          {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "header",
+            "content": "CTA Button"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button URL"
+          },
+          {
+            "type": "color",
+            "id": "button_color",
+            "label": "Button Color",
+            "default": "#E37F5D"
+          },
+          {
+            "type": "color",
+            "id": "button_hover_color",
+            "label": "Button Hover Color",
+            "default": "#cf5f39"
+          },
+          {
+            "type": "color",
+            "id": "button_text_color",
+            "label": "Button Text Color",
+            "default": "#FFF"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Bloom & Billow Hero",
+        "blocks": [
+          {
+            "type": "card"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

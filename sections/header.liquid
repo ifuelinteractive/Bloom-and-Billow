@@ -252,7 +252,6 @@
     {%- endif -%}
 
 
-
     <details-modal class="header__search">
       <details>
         <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
@@ -341,6 +340,7 @@
       <nav class="header__inline-menu">
         <ul class="list-menu list-menu--inline" role="list">
           {%- for link in section.settings.menu.links -%}
+            {% assign linkTitle = link.title | downcase %}
             <li>
               {%- if link.links != blank -%}
                 <details-disclosure>
@@ -380,6 +380,21 @@
                 </details-disclosure>
               {%- else -%}
                 <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
+
+                  {%- if linkTitle == "cbd" -%}
+                    {% render 'icon-cbd' %}
+                  {%- elsif linkTitle == "smoke" -%}
+                    {% render 'icon-smoke' %}
+                  {%- elsif linkTitle == "vape" -%}
+                    {% render 'icon-vape' %}
+                  {%- elsif linkTitle == "eat" -%}
+                    {% render 'icon-eat' %}
+                  {%- elsif linkTitle == "accessories" -%}
+                    {% render 'icon-accessories' %}
+                  {%- elsif linkTitle == "sale" -%}
+                    {% render 'icon-sale' %}
+                  {%- endif -%}
+
                   <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                 </a>
               {%- endif -%}
