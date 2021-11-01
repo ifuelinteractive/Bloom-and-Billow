@@ -2,7 +2,6 @@
     assign columnsMobile = section.settings.grid_size_mobile
     assign columnsDesktop = section.settings.grid_size_desktop
   -%}
-
 <style>
     .card-grid__wrapper {
 
@@ -111,7 +110,6 @@
             width: 33.33333%;
         }
     }
-
 </style>
 
 <div id="Card-Grid-{{ section.id }}" class="card-grid__wrapper">
@@ -133,7 +131,6 @@
             {%- else -%}
             {% assign cardInnerClasses = "card-grid__card-inner" %}
             {%- endif -%}
-
             <div class="{{cardInnerClasses}}">
                 {%- if block.settings.overlay_image -%}
                 <div class="grid-card__overlay" style="width: {{block.settings.overlay_image_width}}%;">
@@ -225,7 +222,7 @@
         "type": "card",
         "name": "Card",
         "settings": [
-        {
+          {
             "type": "image_picker",
             "id": "background_image",
             "label": "Background Image"
